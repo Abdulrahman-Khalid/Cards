@@ -1,10 +1,9 @@
 package main
 
-const handSize int = 5
+const handSize = 5
 
 func main() {
-	cards := new_deck()
-	hand, remainingDeck := deal(cards, handSize)
-	hand.print()
-	remainingDeck.print()
+	cards := newDeck()
+	hand, _ := deal(cards, handSize)
+	hand.saveToFile("my_hand")
 }
