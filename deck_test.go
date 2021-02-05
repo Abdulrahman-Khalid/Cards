@@ -25,13 +25,13 @@ func TestCards(t *testing.T) {
 }
 
 func TestIODeck(t *testing.T) {
-	const fileName = "_deckTesting"
+	const fileName = ".deckIOTesting"
 	os.Remove(fileName)
 	newDeck := newDeck()
 	newDeck.saveToFile(fileName)
 	loadedDeck := loadFromFile(fileName)
 	if len(loadedDeck) != numOfCards {
-		t.Error("Expected deck's length of", numOfCards, "but got", len(loadedDeck))
+		t.Errorf("Expected deck's length of %v but got %v", numOfCards, len(loadedDeck))
 	}
 	os.Remove(fileName)
 }

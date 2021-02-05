@@ -61,7 +61,7 @@ func (cards deck) shuffle() {
 	newRand := rand.New(src)
 
 	for i := range cards {
-		newPos := newRand.Intn(len(cards) - 1)
+		newPos := newRand.Intn(len(cards))
 		cards[i], cards[newPos] = cards[newPos], cards[i]
 	}
 }
